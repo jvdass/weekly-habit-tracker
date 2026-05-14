@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="gauche">
+        <img src="run.avif" alt="image de sport" width="430px" height="600px">
+    </main>
+
+    <main class="container">
+        <header>
+            <h1>📅 Tracker d'habitudes hebdomadaire</h1>
+            <p>Suivez vos progrès chaque semaine</p>
+        </header>
+
+        <!-- Formulaire pour ajouter une habitude globale -->
+        <section class="form-section">
+            <form id="habit-form">
+                <input type="text" id="habit-name" placeholder="Nouvelle habitude (ex: Sport, Méditation,Lecture...)" required>
+                <button type="submit" id="add-habit-btn">Ajouter</button>
+            </form>
+        </section>
+
+        <!-- Conteneur des semaines -->
+        <div id="weeks-container">
+            <!-- Le JavaScript injectera les blocs "Semaine" ici -->
+        </div>
+
+        <!-- Action pour ajouter une nouvelle période -->
+        <div class="actions">
+            <button id="add-week-btn" class="btn-secondary">+ Nouvelle semaine</button>
+        </div>
+    </main>
+
+    <!-- Script principal -->
+    <script src="script.js"></script>
+</body>
+</html>

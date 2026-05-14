@@ -1,0 +1,219 @@
+
+:root {
+    --primary-color: #2f3437; 
+    --accent-color: #4a90e2;
+    --bg-color: #ffffff;
+    --card-bg: #f7f6f3;
+    --border-color: #e9e9e7;
+    --success-color: #2ecc71;
+    --text-main: #37352f;
+    --border-radius: 6px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.5;
+    padding: 20px 20px;
+    display: flex;
+}
+.gauche {
+    width: 40%;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+}
+
+.container {
+    width: 60%;
+    padding: 10px;
+    margin-left: 38%;
+}
+
+header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+/* --- Formulaire d'ajout --- */
+.form-section {
+    margin-bottom: 50px;
+    padding: 20px;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+}
+
+#habit-form {
+    display: flex;
+    gap: 10px;
+}
+
+#habit-name {
+    flex: 3;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    outline: none;
+}
+
+#add-habit-btn {
+    width: fit-content; 
+    padding: 10px 30px; 
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    white-space: nowrap; 
+}
+
+/* --- Grille Hebdomadaire (Le "Week Card") --- */
+.week-card {
+    margin-bottom: 40px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.week-header {
+    background: var(--card-bg);
+    padding: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Structure de la grille (Nom + 7 jours) */
+.grid-row {
+    display: grid;
+    grid-template-columns: 200px repeat(7, 1fr);
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.grid-cell {
+    padding: 12px;
+    text-align: center;
+    border-right: 1px solid var(--border-color);
+}
+
+.grid-cell:last-child {
+    border-right: none;
+}
+
+.day-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #888;
+}
+
+.habit-label {
+    text-align: left;
+    font-weight: 500;
+}
+
+/* Checkboxes personnalisées style "Cocher" */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--success-color);
+}
+
+/* --- Bouton d'action --- */
+.actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-secondary {
+    background: none;
+    border: 1px dashed var(--primary-color);
+    color: var(--primary-color);
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    background: var(--card-bg);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .grid-row {
+        grid-template-columns: 120px repeat(7, 1fr);
+    }
+    
+    .habit-label {
+        font-size: 0.9rem;
+        word-break: break-all;
+    }
+    
+    #habit-form {
+        flex-direction: column;
+    }
+}
+
+.week-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stats {
+    font-size: 0.9rem;
+    color: rgba(4, 0, 11, 0.936);
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.edit-tools {
+    display: inline-block;
+    font-size: 0.7rem;
+    margin-left: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.habit-label:hover .edit-tools {
+    opacity: 1;
+}
+
+.edit-tools span {
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; 
+    }
+    .gauche, .container {
+        width: 100%;
+        position: static; 
+        margin-left: 0;
+    }
+}
+.delete-week-btn {
+    background: none;
+    border: none;
+    
+}
